@@ -134,3 +134,72 @@ def task_18 (input:String, timesToRepeat:Int) = {
   }
 }
 //task 20
+sqaure("h",4)
+def sqaure(input : String, num : Int) = {
+  for (i <- 1 to num;
+       j <- 1 to num)
+        if (j%num ==0)print(input+"\n")
+        else(print(input))
+}
+
+
+//task21
+fizzBuzz("err", "whee", 15)
+def fizzBuzz(fizz :String, buzz:String, num :Int)={
+  for(a<-1 to num){
+    if (a%3==0&&a%5==0)  print(fizz + buzz +", ")
+    else if (a%3 == 0)   print(fizz + ", ")
+    else if (a%5==0) print(buzz + ", ")
+    else print(a + ", ")
+  }
+}
+
+//task22
+def matrixLoop() = {
+  while (true) {
+    val r = scala.util.Random
+    println(r.nextPrintableChar())
+  }
+}
+
+//task23
+
+sqaureRec("i",4)
+def sqaureRec(input : String, num : Int, counter : Int = 1): Unit ={
+  if (counter%num ==0) {print(input+"\n")}
+  else{(print(input))}
+
+  if (counter<=num*num){sqaureRec(input, num, counter + 1)}
+}
+
+def fizzBuzzRec(fizz :String, buzz:String, num :Int, a : Int=1):Unit={
+
+    if (a%3==0&&a%5==0)  print(fizz + buzz +", ")
+    else if (a%3 == 0)   print(fizz + ", ")
+    else if (a%5==0) print(buzz + ", ")
+    else print(a + ", ")
+
+    if (a <= num) {fizzBuzzRec(fizz, buzz, num, a+1)}
+}
+
+def matrixRec() : Unit={
+  val r = scala.util.Random
+  println(r.nextPrintableChar())
+  matrixRec()
+}
+
+
+//task 24
+task16_patternMatching(1,1, true)
+task16_patternMatching(1,0,true)
+task16_patternMatching(0,2,true)
+task16_patternMatching(0,0,true)
+
+def task16_patternMatching(num1 : Int, num2 : Int, addOrMult:Boolean) : Int =  {
+  (num1, num2, addOrMult) match{
+    case (0,_,_) => num2
+    case (_,0,_) => num1
+    case(_,_,true) => num1 + num2
+    case(_,_,false) => num1*num2
+}}
+
