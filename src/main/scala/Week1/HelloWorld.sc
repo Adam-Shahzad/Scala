@@ -157,8 +157,7 @@ def fizzBuzz(fizz :String, buzz:String, num :Int)={
 //task22
 def matrixLoop() = {
   while (true) {
-    val r = scala.util.Random
-    println(r.nextPrintableChar())
+    println(scala.util.Random.nextPrintableChar())
   }
 }
 
@@ -183,8 +182,7 @@ def fizzBuzzRec(fizz :String, buzz:String, num :Int, a : Int=1):Unit={
 }
 
 def matrixRec() : Unit={
-  val r = scala.util.Random
-  println(r.nextPrintableChar())
+  println(scala.util.Random.nextPrintableChar())
   matrixRec()
 }
 
@@ -203,3 +201,33 @@ def task16_patternMatching(num1 : Int, num2 : Int, addOrMult:Boolean) : Int =  {
     case(_,_,false) => num1*num2
 }}
 
+//task 26 PATTERN MATCHING 2 (incomplete)
+
+def task26(numbers : Any): Any ={
+  numbers match{
+    case x: List[Int] if x.length <= 2 => x.reverse
+    case x: Array[Int] if x.length <= 2 => x.reverse
+    case x: Tuple2[Int, Int] => x.swap
+  }
+}
+
+//task 27 MAP FUNCTION 1
+def task27()= {
+  val numb: List[Int] = List(1, 2, 3, 21, 22, 23)
+  val answer: List[Int] = numb.map(x => if (x > 20) x * 10 else x)
+
+}
+
+//task 28 MAP FUNCTION 2
+task28()
+def task28()= {
+  val numb= List("hello", "adam", "I")
+  numb.map(x => if (x.length >= 4) x)
+}
+task28()
+
+//task 29 FLATMAP FUNCTION 1
+var theList = List(List(List(1,2,3,4,5), List(6,7,8,9,10)), List(List(11,12,13,14,15), List(16,17,18,19,20)))
+
+
+//
