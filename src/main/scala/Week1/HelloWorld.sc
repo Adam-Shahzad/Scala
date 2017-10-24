@@ -78,8 +78,8 @@ def dispNameAndAddress(name: String, address : String) ={
 //task 12 - STRINGS 4
 task_12(1.11111)
 def task_12(input: Double)={
-  val s = math pow (10, 3)
-  println(Math.round(input * s) / s)
+  val decimalAfterPoint = math pow (10, 3)
+  println(Math.round(input * decimalAfterPoint) / decimalAfterPoint)
 }
 
 //task13 - STRINGS 5
@@ -87,21 +87,16 @@ reverseString("Hello")
 def reverseString (input:String) ={println(input.reverse)}
 
 //task14 - OPERATORS
-def sumOfInts(num1 : Int, num2 : Int) : Int = {
-  val result = num1 + num2
-  result}
+def sumOfInts(num1 : Int, num2 : Int) : Int = {num1 + num2}
 
 //task15 - OPERATORS 2
-def ageInSeconds(age:Int):String={
-  val result:String = ("you're age in seconds is " + (age*365.25*24*60*60).toString())
-  result}
+def ageInSeconds(age:Int):String={"you're age in seconds is " + (age*365.25*24*60*60).toString()}
 
 //task16 - CONDITIONALS
 def task16(num1 : Int, num2 : Int, addOrMult:Boolean) : Int = {
-  var result = 0;
-  if (addOrMult == true){result = num1 + num2 }
-  else {result = num1 * num2}
-  result}
+  if (addOrMult == true){ num1 + num2 }
+  else {num1 * num2}
+  }
 
 //task 17 - CONDITIONALS 2
 task17(1,1, true)
@@ -110,19 +105,13 @@ task17(0,2,true)
 task17(0,0,true)
 
 def task17(num1 : Int, num2 : Int, addOrMult:Boolean) : Int = {
-  var result = 0;
-  if(num1 == 0){result = num2}
-  else if(num2 == 0){result = num1}
-
+  if(num1 == 0){num2}
+  else if(num2 == 0){num1}
   else {
-    if (addOrMult == true) {
-      result = num1 + num2
-    }
-    else {
-      result = num1 * num2
-    }
+    if (addOrMult == true) {num1 + num2}
+  else {num1 * num2}
   }
-  result}
+  }
 
 
 //task 18 ITERATION
@@ -156,11 +145,7 @@ def fizzBuzz(fizz :String, buzz:String, num :Int)={
 
 //task22
 def matrixLoop() = {
-  while (true) {
-    val r = scala.util.Random
-    println(r.nextPrintableChar())
-  }
-}
+  while (true) {print(scala.util.Random.nextPrintableChar())}}
 
 //task23
 
@@ -189,7 +174,8 @@ def matrixRec() : Unit={
 }
 
 
-//task 24
+//task 24 PATTERN MATCHING
+
 task16_patternMatching(1,1, true)
 task16_patternMatching(1,0,true)
 task16_patternMatching(0,2,true)
@@ -203,3 +189,32 @@ def task16_patternMatching(num1 : Int, num2 : Int, addOrMult:Boolean) : Int =  {
     case(_,_,false) => num1*num2
 }}
 
+//task 26 PATTERN MATCHING 2 (incomplete)
+
+def task26(numbers : Any): Any ={
+  numbers match{
+    case x: List[Int] if x.length <= 2 => x.reverse
+    case x: Array[Int] if x.length <= 2 => x.reverse
+    case x: Tuple2[Int, Int] => x.swap
+  }
+}
+
+//task 27 MAP FUNCTION 1
+def task27()= {
+  val numb: List[Int] = List(1, 2, 3, 21, 22, 23)
+  val answer: List[Int] = numb.map(x => if (x > 20) x * 10 else x)
+
+}
+
+//task 28 MAP FUNCTION 2
+task28()
+def task28()= {
+  var numb= List("hello", "adam", "I")
+   numb.map(x => if (x.length >= 4) x)
+}
+task28()
+
+//task 29 FLATMAP FUNCTION 1
+var theList = List(List(List(1,2,3,4,5), List(6,7,8,9,10)), List(List(11,12,13,14,15), List(16,17,18,19,20)))
+var theFlatList : List[Int]= theFlatList.flatMap(theFlatList.flatMap(theList))
+println(theFlatList)
