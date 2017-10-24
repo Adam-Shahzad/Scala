@@ -227,7 +227,9 @@ def task28()= {
 task28()
 
 //task 29 FLATMAP FUNCTION 1
-var theList = List(List(List(1,2,3,4,5), List(6,7,8,9,10)), List(List(11,12,13,14,15), List(16,17,18,19,20)))
+val theList = List(List(List(1,2,3,4,5), List(6,7,8,9,10)), List(List(11,12,13,14,15), List(16,17,18,19,20)))
+var theFlatList = theList.flatten.flatten
+println(theFlatList)
 
+//task 30 FOREACH 1
 
-//
