@@ -57,8 +57,8 @@ returnAll(1.1)
 def returnAll(input:Any) = {println(input)}
 
 //task 9 -STRINGS
-var inputToTrim = "hello"
-var trimBy = 3
+val inputToTrim = "hello"
+val trimBy = 3
 trimFunc(inputToTrim, trimBy)
 def trimFunc(input : String, trimBy : Int) : String = {(input.slice(input.length - trimBy, input.length)) }
 
@@ -168,8 +168,8 @@ def fizzBuzzRec(fizz :String, buzz:String, num :Int, a : Int=1):Unit={
 }
 
 def matrixRec() : Unit={
-  val r = scala.util.Random
-  println(r.nextPrintableChar())
+
+  println(scala.util.Random.nextPrintableChar())
   matrixRec()
 }
 
