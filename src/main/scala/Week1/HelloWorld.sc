@@ -232,4 +232,14 @@ var theFlatList = theList.flatten.flatten
 println(theFlatList)
 
 //task 30 FOREACH 1
+val listOfVowels = List("a","e","i","o","u")
+listOfVowels.foreach(x=>println(x))
 
+//task 31 FOREACH 2
+val fruitList = List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry")
+fruitList.foreach(x => {
+  var temp = ""
+  if (x.length>temp.length) temp = x
+})
+
+//task32
