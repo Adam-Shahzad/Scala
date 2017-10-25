@@ -224,16 +224,37 @@ val listOfVowels = List("a","e","i","o","u")
 listOfVowels.foreach(x=>println(x))
 
 //task 31 FOREACH 2
+var temp = ""
 val fruitList = List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry")
 fruitList.foreach(x => {
-  var temp = ""
   if (x.length>temp.length) temp = x
-})
+}
+)
+println(temp)
 
 //task33 fibinacci
+isFib(List(1,1,2,3,5,8,15))
 
 def isFib(numbers:List[Int]):Boolean  ={
-  for(a <- numbers.length-1 to 1){
-    if (numbers(a)==numbers(a-1))
+  var toggle = true
+  for(a <- numbers.length-1 to 2 by -1){
+    if (numbers(a)!=numbers(a-1)+numbers(a-2))  toggle = false
   }
+  toggle
+}
+
+//task34
+println(greatestCommonDivisor(10,5))
+
+def  greatestCommonDivisor(num1 : Int, num2 : Int):Int = {
+  var a = num1 // i dont know why i had to do this
+  var b = num2
+  var temp = 0
+
+  while (b > 0) {
+    temp = b
+    b = a % b
+    a = temp
+  }
+  a
 }
