@@ -145,6 +145,12 @@ def fizzBuzz(fizz :String, buzz:String, num :Int)={
 
 //task22
 def matrixLoop() = {
+
+  while (true) {
+    println(scala.util.Random.nextPrintableChar())
+  }
+}
+
   while (true) {print(scala.util.Random.nextPrintableChar())}}
 
 //task23
@@ -168,8 +174,7 @@ def fizzBuzzRec(fizz :String, buzz:String, num :Int, a : Int=1):Unit={
 }
 
 def matrixRec() : Unit={
-  println( scala.util.Random
-  .nextPrintableChar())
+  println(scala.util.Random.nextPrintableChar())
   matrixRec()
 }
 
@@ -188,6 +193,7 @@ def task16_patternMatching(num1 : Int, num2 : Int, addOrMult:Boolean) : Int =  {
     case(_,_,true) => num1 + num2
     case(_,_,false) => num1*num2
 }}
+
 
 //task 26 PATTERN MATCHING 2 (incomplete)
 
