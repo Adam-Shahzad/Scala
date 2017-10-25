@@ -57,8 +57,8 @@ returnAll(1.1)
 def returnAll(input:Any) = {println(input)}
 
 //task 9 -STRINGS
-var inputToTrim = "hello"
-var trimBy = 3
+val inputToTrim = "hello"
+val trimBy = 3
 trimFunc(inputToTrim, trimBy)
 def trimFunc(input : String, trimBy : Int) : String = {(input.slice(input.length - trimBy, input.length)) }
 
@@ -78,8 +78,8 @@ def dispNameAndAddress(name: String, address : String) ={
 //task 12 - STRINGS 4
 task_12(1.11111)
 def task_12(input: Double)={
-  val s = math pow (10, 3)
-  println(Math.round(input * s) / s)
+  val decimalAfterPoint = math pow (10, 3)
+  println(Math.round(input * decimalAfterPoint) / decimalAfterPoint)
 }
 
 //task13 - STRINGS 5
@@ -87,21 +87,16 @@ reverseString("Hello")
 def reverseString (input:String) ={println(input.reverse)}
 
 //task14 - OPERATORS
-def sumOfInts(num1 : Int, num2 : Int) : Int = {
-  val result = num1 + num2
-  result}
+def sumOfInts(num1 : Int, num2 : Int) : Int = {num1 + num2}
 
 //task15 - OPERATORS 2
-def ageInSeconds(age:Int):String={
-  val result:String = ("you're age in seconds is " + (age*365.25*24*60*60).toString())
-  result}
+def ageInSeconds(age:Int):String={"you're age in seconds is " + (age*365.25*24*60*60).toString()}
 
 //task16 - CONDITIONALS
 def task16(num1 : Int, num2 : Int, addOrMult:Boolean) : Int = {
-  var result = 0;
-  if (addOrMult == true){result = num1 + num2 }
-  else {result = num1 * num2}
-  result}
+  if (addOrMult == true){ num1 + num2 }
+  else {num1 * num2}
+  }
 
 //task 17 - CONDITIONALS 2
 task17(1,1, true)
@@ -110,19 +105,13 @@ task17(0,2,true)
 task17(0,0,true)
 
 def task17(num1 : Int, num2 : Int, addOrMult:Boolean) : Int = {
-  var result = 0;
-  if(num1 == 0){result = num2}
-  else if(num2 == 0){result = num1}
-
+  if(num1 == 0){num2}
+  else if(num2 == 0){num1}
   else {
-    if (addOrMult == true) {
-      result = num1 + num2
-    }
-    else {
-      result = num1 * num2
-    }
+    if (addOrMult == true) {num1 + num2}
+  else {num1 * num2}
   }
-  result}
+  }
 
 
 //task 18 ITERATION
@@ -156,10 +145,12 @@ def fizzBuzz(fizz :String, buzz:String, num :Int)={
 
 //task22
 def matrixLoop() = {
+
   while (true) {
     println(scala.util.Random.nextPrintableChar())
   }
 }
+
 
 //task23
 
@@ -187,7 +178,8 @@ def matrixRec() : Unit={
 }
 
 
-//task 24
+//task 24 PATTERN MATCHING
+
 task16_patternMatching(1,1, true)
 task16_patternMatching(1,0,true)
 task16_patternMatching(0,2,true)
@@ -200,6 +192,7 @@ def task16_patternMatching(num1 : Int, num2 : Int, addOrMult:Boolean) : Int =  {
     case(_,_,true) => num1 + num2
     case(_,_,false) => num1*num2
 }}
+
 
 //task 26 PATTERN MATCHING 2 (incomplete)
 
@@ -242,4 +235,4 @@ fruitList.foreach(x => {
   if (x.length>temp.length) temp = x
 })
 
-//task32
+

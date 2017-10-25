@@ -2,7 +2,9 @@ package Week1
 import scala.io.Source
 object BrokenKeyboard extends App
 {
+
   val inputs:List[String] = List("edcf","qwer","hjklo")
+
   main(3,inputs )
 
   def main(repeated : Int, inputs :List[String]): Unit ={
@@ -16,3 +18,4 @@ object BrokenKeyboard extends App
   }
 
 }
+
