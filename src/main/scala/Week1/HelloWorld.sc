@@ -230,10 +230,10 @@ val listOfVowels = List("a","e","i","o","u")
 listOfVowels.foreach(x=>println(x))
 
 //task 31 FOREACH 2
+var temp = ""
 val fruitList = List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry")
 fruitList.foreach(x => {
-  var temp = ""
   if (x.length>temp.length) temp = x
-})
-
-//task32
+}
+)
+println(temp)
