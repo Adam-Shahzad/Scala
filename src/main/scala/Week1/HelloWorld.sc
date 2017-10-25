@@ -231,3 +231,5 @@ fruitList.foreach(x => {
 })
 
 //task32
+var err = java.util.TimeZone.getAvailableIDs.foreach(x=> x.split("/").filter(x=>{if x.length>1 x(1) else x(0)}))
+println(err)
