@@ -258,3 +258,22 @@ def  greatestCommonDivisor(num1 : Int, num2 : Int):Int = {
   }
   a
 }
+
+//task35
+
+println(task35(3))
+def task35(num : Int): Int = {
+  var result = num
+  for (a <- num to 2 by -1) {
+    result += result * a
+  }
+  result
+}
+
+//task36
+def task36(input1:String, input2:String): Unit ={
+  if (input2.contains(input2))println(s"$input1 can be found in $input2")
+}
+
+//task37
+def task37(check : String,String => Boolean)
