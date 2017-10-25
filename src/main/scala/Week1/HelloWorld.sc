@@ -230,6 +230,10 @@ fruitList.foreach(x => {
   if (x.length>temp.length) temp = x
 })
 
-//task32
-var err = java.util.TimeZone.getAvailableIDs.foreach(x=> x.split("/").filter(x=>{if x.length>1 x(1) else x(0)}))
-println(err)
+//task33 fibinacci
+
+def isFib(numbers:List[Int]):Boolean  ={
+  for(a <- numbers.length-1 to 1){
+    if (numbers(a)==numbers(a-1))
+  }
+}
