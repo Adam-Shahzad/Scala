@@ -26,7 +26,7 @@ object Garage extends App {
   def outputGarageContents():Unit = garageList.foreach(vehicle => println(vehicle.toString))
 
 
-  def addEmployee(fName:String,  sName:String,  id:Int ) = employeeList+=new Employee(fName,  sName,  id)
+  def addEmployee(fName:String,  sName:String,  id:Int, available:Boolean ) = employeeList+=new Employee(fName,  sName,  id,available )
 
 
   def getVehicleByID(id:Int): Option[Vehicle] = garageList.find((a:Vehicle)=> a.id==id)
