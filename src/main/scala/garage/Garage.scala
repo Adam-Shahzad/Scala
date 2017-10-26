@@ -10,7 +10,7 @@ object Garage extends App {
   var garageList = ListBuffer[Vehicle]()
   var employeeList = ListBuffer[Employee]()
 
-  def addCar(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part] ) = garageList += new Car(id, custID, vehicleType, faults)
+  def addCar(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part] ) = {garageList += new Car(id, custID, vehicleType, faults)
 
 
   def addBike(id: Int, custID:Int, vehicleType :String, faults: ListBuffer[Part] ) = garageList+=new Bike(id, custID, vehicleType, faults)
