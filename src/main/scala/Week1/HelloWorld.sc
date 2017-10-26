@@ -151,7 +151,7 @@ def matrixLoop() = {
   }
 }
 
-  while (true) {print(scala.util.Random.nextPrintableChar())}}
+  while (true) {print(scala.util.Random.nextPrintableChar())}
 
 //task23
 
@@ -221,13 +221,11 @@ var theFlatList = theList.flatten.flatten
 println(theFlatList)
 
 //task 30 FOREACH 1
-val listOfVowels = List("a","e","i","o","u")
-listOfVowels.foreach(println)
+ List("a","e","i","o","u").foreach(println)
 
 //task 31 FOREACH 2
 var temp = ""
-val fruitList = List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry")
-fruitList.foreach(x => {
+List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry").foreach(x => {
   if (x.length>temp.length) temp = x
 }
 )
