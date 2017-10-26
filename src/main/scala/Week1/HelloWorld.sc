@@ -271,9 +271,57 @@ def task35(num : Int): Int = {
 }
 
 //task36
-def task36(input1:String, input2:String): Unit ={
-  if (input2.contains(input2))println(s"$input1 can be found in $input2")
+def task36(input1:String, input2:String): Boolean ={
+  if (input2.contains(input2))
+    {println(s"$input1 can be found in $input2")
+      true}
+  else false
+}
+//task37
+
+val test = (input1: String,input2: String) => input2.contains(input1)
+
+
+def task37(check : (String,String) => Boolean, input1:String, input2: String){
+println(s"can $input1 be found in $input2 \n ${check(input1,input2)}")
 }
 
-//task37
-def task37(check : String,String => Boolean)
+//task38
+(input1: String,input2: String) => input2.contains(input1)
+
+//task39
+def task39(input : Double):Double= {
+      if (input > 50) (input*0.9)*1.2
+      else input*1.2
+}
+
+//task40
+val dicountAndVAT = (input :Double) => {
+  if (input > 50) (input*0.9)*1.2
+  else input*1.2
+}
+
+def task40(dAndV:(Double)=>Double)(price :Double)(quantity : Int){quantity*dAndV(price)}
+
+
+
+//task41
+def blackJack(input1:Int,input2:Int)={
+  if(21-input1<0 && 21-input2<0)0
+  else if (21-input1<0) input2
+  else if (21-input2<0) input1
+  else if (input1>input2) input1
+  else input2
+}
+
+//task42
+def uniqeSum(input :List [Int]) = input.distinct.sum
+
+//task43
+def tooHot(temp:Int,isSummer:Boolean):Boolean={
+  var upperbound = 0
+  if (isSummer==true) upperbound=100
+  else upperbound = 90
+  if (temp < upperbound) false
+  else true
+}
