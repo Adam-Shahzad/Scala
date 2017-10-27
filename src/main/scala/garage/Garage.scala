@@ -10,42 +10,42 @@ object Garage extends App {
   var garageList = ListBuffer[Vehicle]()
   var employeeList = ListBuffer[Employee]()
 
-  def addCar(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part] ) = {garageList += new Car(id, custID, vehicleType, faults)
+  def addCar(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part]) = {
+    garageList += new Car(id, custID, vehicleType, faults)
 
 
-  def addBike(id: Int, custID:Int, vehicleType :String, faults: ListBuffer[Part] ) = garageList+=new Bike(id, custID, vehicleType, faults)
+    def addBike(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part]) = garageList += new Bike(id, custID, vehicleType, faults)
 
 
-
-  def removeVehicleById(id:Int): Unit = garageList = garageList.filter(a=>a.id!=id)
-
-
-  def removeVehicleByType(vehicleType:String): Unit = garageList = garageList.filter(a=>a.vehicleType!=vehicleType)
+    def removeVehicleById(id: Int): Unit = garageList = garageList.filter(a => a.id != id)
 
 
-  def outputGarageContents():Unit = garageList.foreach(vehicle => println(vehicle.toString))
+    def removeVehicleByType(vehicleType: String): Unit = garageList = garageList.filter(a => a.vehicleType != vehicleType)
 
 
-  def addEmployee(fName:String,  sName:String,  id:Int, available:Boolean ) = employeeList+=new Employee(fName,  sName,  id,available )
+    def outputGarageContents(): Unit = garageList.foreach(vehicle => println(vehicle.toString))
 
 
-  def getVehicleByID(id:Int): Option[Vehicle] = garageList.find((a:Vehicle)=> a.id==id)
+    def addEmployee(fName: String, sName: String, id: Int, available: Int) = employeeList += new Employee(fName, sName, id, available)
 
 
+    def getVehicleByID(id: Int): Option[Vehicle] = garageList.find((a: Vehicle) => a.id == id)
 
-  val randomFaults = () =>
-  {
-    var temp = new ListBuffer[Part]()
-    for(a<- 1 to 10){
-      temp += new Part(a.toString, new Random().nextBoolean())
+
+    val randomFaults = () => {
+      var temp = new ListBuffer[Part]()
+      for (a <- 1 to 10) {
+        temp += new Part(a.toString, new Random().nextBoolean())
+      }
+      temp
     }
-    temp
+
+
+    //test
+    addBike(1, 1, "B", randomFaults())
+
+    outputGarageContents()
   }
-
-
-  //test
-  addBike(1, 1, "B", randomFaults())
-  outputGarageContents()
 }
 
 
