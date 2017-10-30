@@ -239,16 +239,16 @@ def isFib(numbers:List[Int]):Boolean  ={
 println(greatestCommonDivisor(10,5))
 
 def  greatestCommonDivisor(num1 : Int, num2 : Int):Int = {
-  var a = num1 // i dont know why i had to do this
-  var b = num2
+  var number1 = num1 // i dont know why i had to do this
+  var number2 = num2
   var temp = 0
 
-  while (b > 0) {
-    temp = b
-    b = a % b
-    a = temp
+  while (number2 > 0) {
+    temp = number2
+    number2 = number1 % number2
+    number1 = temp
   }
-  a
+  number1
 }
 
 //task35

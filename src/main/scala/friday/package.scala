@@ -2,7 +2,6 @@ package friday
 import scala.io.StdIn.readLine
 
 object Morsecode extends App{
-//this is a bad implementation why didn't i use a map, maybee cause i hate myself
   print("enter a string")
   readLine().foreach(letter=>print(getMorsecodeOfChar(letter.toLower)))
 
