@@ -1,10 +1,10 @@
 package friday
 import scala.io.StdIn.readLine
 
-package object Morsecode extends App{
+object Morsecode extends App{
 //this is a bad implementation why didn't i use a map, maybee cause i hate myself
   print("enter a string")
-  readLine().foreach(letter=>print(getMorsecodeOfChar(letter)))
+  readLine().foreach(letter=>print(getMorsecodeOfChar(letter.toLower)))
 
   def getMorsecodeOfChar(letter:Char): String ={
     letter match{
