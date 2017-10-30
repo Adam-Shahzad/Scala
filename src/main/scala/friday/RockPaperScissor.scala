@@ -10,7 +10,7 @@ while(true){
 println("Rock,paper or scissor?")
   val input = readLine()
   println(makeGuess())
-  checkResults(input,makeGuess())
+  println(checkResults(input,makeGuess()))
   countInput(input)
 
 }
@@ -25,9 +25,9 @@ println("Rock,paper or scissor?")
   }
 
   def makeGuess(): String ={
-    if (previousGuesses.min == "rock") "paper"
-    else if (previousGuesses.min == "paper") "scissor"
-    else if (previousGuesses.min == "scissor") "rock"
+    if (previousGuesses.min._1 == "rock") "paper"
+    else if (previousGuesses.min._1 == "paper") "scissor"
+    else if (previousGuesses.min._1 == "scissor") "rock"
     else "rock"
   }
 
