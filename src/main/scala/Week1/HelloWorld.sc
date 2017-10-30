@@ -223,3 +223,97 @@ List("Apple", "Raspberry", "Lemon", "Kiwi", "Strawberry").foreach(x => {
 }
 )
 println(temp)
+
+//task33 fibinacci
+isFib(List(1,1,2,3,5,8,15))
+
+def isFib(numbers:List[Int]):Boolean  ={
+  var toggle = true
+  for(a <- numbers.length-1 to 2 by -1){
+    if (numbers(a)!=numbers(a-1)+numbers(a-2))  toggle = false
+  }
+  toggle
+}
+
+//task34
+println(greatestCommonDivisor(10,5))
+
+def  greatestCommonDivisor(num1 : Int, num2 : Int):Int = {
+  var number1 = num1 // i dont know why i had to do this
+  var number2 = num2
+  var temp = 0
+
+  while (number2 > 0) {
+    temp = number2
+    number2 = number1 % number2
+    number1 = temp
+  }
+  number1
+}
+
+//task35
+
+println(task35(3))
+def task35(num : Int): Int = {
+  var result = num
+  for (a <- num to 2 by -1) {
+    result += result * a
+  }
+  result
+}
+
+//task36
+def task36(input1:String, input2:String): Boolean ={
+  if (input2.contains(input2))
+    {println(s"$input1 can be found in $input2")
+      true}
+  else false
+}
+//task37
+
+val test = (input1: String,input2: String) => input2.contains(input1)
+
+
+def task37(check : (String,String) => Boolean, input1:String, input2: String){
+println(s"can $input1 be found in $input2 \n ${check(input1,input2)}")
+}
+
+//task38
+(input1: String,input2: String) => input2.contains(input1)
+
+//task39
+def task39(input : Double):Double= {
+      if (input > 50) (input*0.9)*1.2
+      else input*1.2
+}
+
+//task40
+val dicountAndVAT = (input :Double) => {
+  if (input > 50) (input*0.9)*1.2
+  else input*1.2
+}
+
+def task40(dAndV:(Double)=>Double)(price :Double)(quantity : Int){quantity*dAndV(price)}
+
+
+
+//task41
+def blackJack(input1:Int,input2:Int)={
+  if(21-input1<0 && 21-input2<0)0
+  else if (21-input1<0) input2
+  else if (21-input2<0) input1
+  else if (input1>input2) input1
+  else input2
+}
+
+//task42
+def uniqeSum(input :List [Int]) = input.distinct.sum
+
+//task43
+def tooHot(temp:Int,isSummer:Boolean):Boolean={
+  var upperbound = 0
+  if (isSummer==true) upperbound=100
+  else upperbound = 90
+  if (temp < upperbound) false
+  else true
+}
