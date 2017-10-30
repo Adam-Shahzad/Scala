@@ -9,7 +9,7 @@ class Car(val id: Int, val custID : Int, val vehicleType:String, var faults:List
 
   def calculateCost():Int =100*returnOnlyBroken().length
 
-  def fix():Unit =
-    faults.foreach(fixed=>fixed.isBroken=false)
+  def fix():Unit = faults.foreach(fixed=>fixed.isBroken=false)
 
+  def calculateTime():Int = returnOnlyBroken().length*30
 }

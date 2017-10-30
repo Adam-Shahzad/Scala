@@ -12,9 +12,14 @@ object Garage extends App {
 
   def addCar(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part]) = {
     garageList += new Car(id, custID, vehicleType, faults)
+    employeeList(employeeList.indexOf(employeeList.minBy(e=>e.available))).addTask(getVehicleByID(id).calculateTime())
+  }
 
 
-    def addBike(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part]) = garageList += new Bike(id, custID, vehicleType, faults)
+    def addBike(id: Int, custID: Int, vehicleType: String, faults: ListBuffer[Part]) = {
+      garageList += new Bike(id, custID, vehicleType, faults)
+      employeeList(employeeList.indexOf(employeeList.minBy(e=>e.available))).addTask(getVehicleByID(id).calculateTime())
+    }
 
 
     def removeVehicleById(id: Int): Unit = garageList = garageList.filter(a => a.id != id)
@@ -29,7 +34,8 @@ object Garage extends App {
     def addEmployee(fName: String, sName: String, id: Int, available: Int) = employeeList += new Employee(fName, sName, id, available)
 
 
-    def getVehicleByID(id: Int): Option[Vehicle] = garageList.find((a: Vehicle) => a.id == id)
+    def getVehicleByID(id: Int): Vehicle = garageList.find((a: Vehicle) => a.id == id).getOrElse(null)
+
 
 
     val randomFaults = () => {
@@ -42,10 +48,13 @@ object Garage extends App {
 
 
     //test
+    addEmployee("a","a",1,0)
+    addEmployee("b","b",2,1)
+    employeeList.foreach(employee=>println(employee.toString))
     addBike(1, 1, "B", randomFaults())
-
+    employeeList.foreach(employee=>println(employee.toString))
     outputGarageContents()
-  }
+
 }
 
 

@@ -10,4 +10,6 @@ abstract class Vehicle {
   def calculateCost():Int
 
   def fix()
+
+  def calculateTime():Int
 }

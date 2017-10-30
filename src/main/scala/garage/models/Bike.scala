@@ -11,4 +11,6 @@ class Bike(val id: Int, val custID : Int, val vehicleType:String, var faults:Lis
 
   def fix():Unit = this.faults = new ListBuffer[Part]
 
+  def calculateTime():Int = returnOnlyBroken().length*20
+
 }
