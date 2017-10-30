@@ -5,21 +5,21 @@ object Facoriall extends App{
   println(CheckIfFactorial(6))
 
   def CheckIfFactorial(input : Int) : Any={
-    var ll = ""
+    var result = ""
     var toggle = true
-    var a = 2
+    var counter = 2
 
     while(toggle){
-      a+=1
-      if (factorial(a) == input) {
+      counter+=1
+      if (factorial(counter) == input) {
         toggle = false
-        ll = a.toString
+        result = counter.toString
       }
-      else if (factorial(a) > input) {
+      else if (factorial(counter) > input) {
         toggle = false
-        ll = "none"
+        result = "none"
     }}
-    ll
+    result
   }
 
   def factorial(mult : Int):Int =  mult match{
