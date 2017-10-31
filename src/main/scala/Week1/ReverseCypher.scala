@@ -1,7 +1,11 @@
 package Week1
 object ReverseCypher extends App{
 
-    "foobar".foreach( ch => print(reverseChar(ch)))
+  def cypherReverse(input:String):String= {
+    var output = ""
+    input.foreach(ch => output+=(reverseChar(ch)))
+    output
+  }
 
   def reverseChar(input:Char): Char = { input match{
     case (' ') => ' '

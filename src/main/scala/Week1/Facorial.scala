@@ -2,7 +2,7 @@ package Week1
 
 object Facoriall extends App{
 
-  println(CheckIfFactorial(6))
+  println(CheckIfFactorial(7))
 
   def CheckIfFactorial(input : Int) : Any={
     var result = ""
