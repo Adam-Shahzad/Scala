@@ -47,13 +47,7 @@ object Garage extends App {
     }
 
 
-    //test
-    addEmployee("a","a",1,0)
-    addEmployee("b","b",2,1)
-    employeeList.foreach(employee=>println(employee.toString))
-    addBike(1, 1, "B", randomFaults())
-    employeeList.foreach(employee=>println(employee.toString))
-    outputGarageContents()
+
 
 }
 
