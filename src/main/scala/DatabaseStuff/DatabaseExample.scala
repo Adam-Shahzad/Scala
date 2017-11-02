@@ -12,7 +12,7 @@ import  scala.concurrent.ExecutionContext.Implicits.global
 object DatabaseExample extends App{
 
   val db = Database.forConfig("mysqlDB")
-  val thingTable = TableQuery[TableExample]
+  val thingTable = TableQuery[People]
 
   val dropThingsCmd = DBIO.seq(thingTable.schema.drop)
   val createThingsCmd = DBIO.seq(thingTable.schema.create)
@@ -54,7 +54,7 @@ object DatabaseExample extends App{
       db.run(query)
     }
       Await.result(addThings,Duration.Inf).andThen{
-        case Success(_)=> listThings
+        case Success(_)=> deleteAThing
         case Failure(error) => println(error.getMessage)
       }
   }
@@ -69,11 +69,44 @@ object DatabaseExample extends App{
     }
 
     Await.result(queryFuture,Duration.Inf).andThen{
-      case Success(_)=>
-        println("success")
-        db.close()
+      case Success(_)=> db.close()
+
       case Failure(error) => println(error.getMessage)
     }
+  }
+
+  def deleteAThing ={
+
+    val del = thingTable.filter(_.id===2)
+
+    val query = Future{
+      db.run(del.delete)
+    }
+
+    Await.result(query,Duration.Inf).andThen{
+      case Success(_)=> updateAThing
+      case Failure(error) => println(error.getMessage)
+    }
+  }
+
+  def updateAThing ={
+
+    val up = thingTable.filter(_.id===1)
+
+    val query = Future{
+      db.run(up.update(3,"steel","wood",5))
+    }
+
+    Await.result(query,Duration.Inf).andThen{
+      case Success(_)=> listThings
+      case Failure(error) => println(error.getMessage)
+    }
+  }
+
+  def searchAThing={
+    val search = thingTable.filter(_.id===1)
+
+
   }
 
   drop
