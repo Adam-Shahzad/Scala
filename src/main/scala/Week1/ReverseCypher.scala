@@ -2,9 +2,7 @@ package Week1
 object ReverseCypher extends App{
 
   def cypherReverse(input:String):String= {
-    var output = ""
-    input.foreach(ch => output+=(reverseChar(ch)))
-    output
+    (input.map(ch=>reverseChar(ch)))
   }
 
   def reverseChar(input:Char): Char = { input match{
