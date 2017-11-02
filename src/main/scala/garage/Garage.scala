@@ -5,7 +5,7 @@ import garage.models.{Bike, Car, Employee, Part, Vehicle}
 import scala.collection.mutable.ListBuffer
 import scala.util.Random
 
-object Garage extends App {
+class Garage {
 
   var garageList = ListBuffer[Vehicle]()
   var employeeList = ListBuffer[Employee]()
